@@ -48,18 +48,18 @@ metriques = {}
 for depth in parameters['max_depth']:
 	for min_samples in parameters['min_samples_split']:
 		with mlflow.start_run():
-            # running the usual flow
-            dtc = DecisionTreeClassifier(random_state=42, max_depth=depth, min_samples_split=min_samples)
-            dtc.fit(X_train, y_train)
-            y_pred = dtc.predict(X_test)
-            # recuperer tous les metriques sous forme d'in dictionnaire
-            all_metrics = eval_metrics(X_test, y_pred)
+            		# running the usual flow
+            		dtc = DecisionTreeClassifier(random_state=42, max_depth=depth, min_samples_split=min_samples)
+            		dtc.fit(X_train, y_train)
+            		y_pred = dtc.predict(X_test)
+            		# recuperer tous les metriques sous forme d'un dictionnaire
+            		all_metrics = eval_metrics(X_test, y_pred)
 			# remplir le dictionnaire de toutes les metriques
 			metriques[max_depth][min_samples] =  all_metrics
 			
 			# ecrire toutes les metriques dans un fichier texte:
 			with open("metrics.txt", 'w') as outfile:
-        		outfile.write(metriques)
+        			outfile.write(metriques)
 
 
 
