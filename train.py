@@ -57,9 +57,10 @@ for depth in parameters['max_depth']:
 			# remplir le dictionnaire de toutes les metriques
 			metriques[depth][min_samples]=all_metrics
 			
-			# ecrire toutes les metriques dans un fichier texte:
-			with open("metrics.txt", 'w') as outfile:
-        			outfile.write(metriques)
+			
+# ecrire toutes les metriques dans un fichier texte:
+with open("metrics.txt", 'w') as outfile:
+	outfile.write(metriques)
 
 
 
