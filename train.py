@@ -55,7 +55,7 @@ for depth in parameters['max_depth']:
             		# recuperer tous les metriques sous forme d'un dictionnaire
             		all_metrics = eval_metrics(X_test, y_pred)
 			# remplir le dictionnaire de toutes les metriques
-			metriques[depth][min_samples]=all_metrics
+			metriques[depth][min_samples] = all_metrics
 			
 			
 # ecrire toutes les metriques dans un fichier texte:
